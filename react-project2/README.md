@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+## Project Schedule
 
-In the project directory, you can run:
+This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
 
-### `npm start`
+You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+|  Day | Deliverable | Status
+|---|---| ---|
+|Day 1| Project Description | Incomplete
+|Day 2| Wireframes / Priority Matrix / Functional Components | Incomplete
+|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 4| Pseudocode / actual code | Incomplete
+|Day 5| Initial Clickable Model  | Incomplete
+|Day 6| MVP | Incomplete
+|Day 7| Present | Incomplete
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Project Description
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+I will create a React app that allows users to search for a song or artist and have either the song or the artists' songs render (by getting the data from the API). Then they should be able to click on the image that renders to play the song.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I originally wanted to use SoundCloud's API but they aren't allowing any more "apps to be registered" so I will use last.fm's API : 
+https://www.last.fm/api 
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Priority Matrix
 
-### `npm run eject`
+Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### MVP/PostMVP - 5min
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### SAMPLE.....
+#### MVP 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Find and use external api 
+- Render data on page in a list based on user input
+-Click event on image that renders 
 
-## Learn More
+#### PostMVP 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Add songs/artists to favorites section
+-Add queue button
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## React Architectural Design
 
-### Code Splitting
+Define the the React components and the architectural design of your app.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg 
 
-### Analyzing the Bundle Size
+## Functional Components
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-### Making a Progressive Web App
+| Component | Description | 
+| --- | :---: |  
+| Homepage | This will render the "landing page" with a button to enter| 
+| Input Forms | Nav & input form | 
+| SearchResults | All results from user's search | 
+| ResultDetails | More information on result chosen and option to play song |
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-### Advanced Configuration
+| Component | Priority | Estimated Time | Actual Time |
+| --- | :---: |  :---: | :---: |
+| Adding Form | H | 3hrs| 0hrs |
+| Working with API | H | 3.5hrs| 0hrs |
+| Rendering API on App | H | 3hrs | 0hrs |
+| Total | H | 9.5hrs| 0hrs | 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Additional Libraries
+ 
