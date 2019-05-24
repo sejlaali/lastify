@@ -1,4 +1,4 @@
-# Project Overview
+# Project 2 Overview
 
 ## Project Schedule
 
@@ -16,11 +16,9 @@ You are **responsible** for scheduling time with your squad to seek approval for
 |Day 6| MVP | Incomplete
 |Day 7| Present | Incomplete
 
-
 ## Project Description
 
 I will create a React app that allows users to search for a song or artist and have either the song or the artists' songs render (by getting the data from the API). Then they should be able to click on the image that renders to play the song.
-
 
 I originally wanted to use SoundCloud's API but they aren't allowing any more "apps to be registered" so I will use last.fm's API : 
 https://www.last.fm/api 
@@ -35,7 +33,6 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
-#### SAMPLE.....
 #### MVP 
 
 - Find and use external api 
