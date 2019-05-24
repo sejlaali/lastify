@@ -20,7 +20,8 @@ I will create a React app that allows users to search for a song or artist and h
 I originally wanted to use SoundCloud's API but they aren't allowing any more "apps to be registered" so I will use last.fm's API : 
 https://www.last.fm/api 
 
-
+Screenshot from API data sample: 
+https://res.cloudinary.com/dfzjh0dui/image/upload/v1558702846/Screen_Shot_2019-05-23_at_9.34.47_PM.png 
 ## Priority Matrix
 
 https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg 
