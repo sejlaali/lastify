@@ -31,16 +31,16 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg
 #### MVP 
 
 - Find and use external api 
-- Render data on page in a list based on user input
--Click event on image that renders 
+- Render artist's top songs, or actual song searched based on user input
+-Click event on image of song(s) that sends user to a different component
 
 #### PostMVP 
 
+-Ability to play song chosen*
 - Add songs/artists to favorites section
 -Add queue button
 
 ## React Architectural Design
-
 
 https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg 
 
