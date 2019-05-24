@@ -2,9 +2,6 @@
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
 
 |  Day | Deliverable | Status
 |---|---| ---|
@@ -26,12 +23,9 @@ https://www.last.fm/api
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
 https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg 
 
 ### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 
@@ -46,13 +40,10 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## React Architectural Design
 
-Define the the React components and the architectural design of your app.
 
 https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg 
 
 ## Functional Components
-
-Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
 | Component | Description | 
 | --- | :---: |  
