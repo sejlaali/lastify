@@ -5,7 +5,7 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                <h1>Music Search</h1>
+                <h1>Artist Search</h1>
                 <button><Link to="/homepage">Enter</Link></button>
             </div>
         )

@@ -10,9 +10,6 @@ class Homepage extends Component {
         return (
           <div>
             <Input />
-           
-                
-
          </div>
         )
     }

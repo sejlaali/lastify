@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import dotenv from "dotenv";
+import ResultDetails from './ResultDetails'
+import OneResult from "./OneResult"
 
 dotenv.config();
 let key = process.env.REACT_APP_API_KEY;
@@ -11,8 +13,10 @@ class Input extends Component {
 
     this.state = {
       inputValue: "",
-      allResults: []
-    };
+      allResults: [],
+      activeSearch: false,
+      artist: ""
+    }
   }
 
   handleChange = evt => {
@@ -21,44 +25,42 @@ class Input extends Component {
     });
   };
 
-    handleSubmit = (evt) => {
-        evt.preventDefault()
-      const url = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${this.state.inputValue}&api_key=${key}&format=json&limit=15`;
-      axios.get(url).then(res => 
+ handleSubmit = (evt) => {
+    evt.preventDefault()
+    // const url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${this.state.inputValue}&api_key=${key}&format=json`
+    const url = `http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=${this.state.inputValue}&api_key=${key}&limit=25&format=json`
+    axios.get(url).then((res) => {
         this.setState ({
             allResults: res.data.toptracks.track,
+            artist: this.state.inputValue,
+            activeSearch: true,
             inputValue: ""
         })
-        // console.log(res.data.toptracks.track[0].image[0])
-        )
-    };
-    
-  render() {
+    })
+}
 
-    return (
-      <div>
+    render() {
+        const header = this.state.activeSearch ? <h1>Currently Searching: {(this.state.artist).toUpperCase()}</h1> : <h1>Search Below</h1> 
+        return (
+            <div>
         <div className="input">
-          <h1>Title of App</h1>
+          {header}
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
               name="song"
               value={this.state.inputValue}
-              placeholder="Search for a song or artist"
+              placeholder="Search for an artist"
               onChange={this.handleChange}
-            />
+              />
             <button type="submit">ENTER</button>
           </form>
         </div>
-        <div className="song-results">
-            <h2>Results</h2>
-      {this.state.allResults.map((result, index) => 
-              <div key={index}>
-                  <h4>{result.name}</h4>
-                <p>Listeners: {Number(result.listeners).toLocaleString('en')}</p>
-              </div>
-        )}
-          <div />
+        <div>
+      {this.state.allResults.map((result, i) => 
+            <div className="song-results">
+            <ResultDetails result={result} index={i} />
+            </div>)}
         </div>
       </div>
     );
