@@ -32,7 +32,7 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg
 
 - Find and use external api 
 - Render artist's top songs, or actual song searched based on user input
--Click event on image of song(s) that sends user to a different component
+- Click event on artist name that shows artist bio summary
 
 #### PostMVP 
 
@@ -49,17 +49,16 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 | Component | Description | 
 | --- | :---: |  
 | Homepage | This will render the "landing page" with a button to enter| 
-| Input Forms | Nav & input form | 
-| SearchResults | All results from user's search | 
-| ResultDetails | More information on result chosen and option to play song |
+| Input Forms | Input form | 
+| SearchResults | 26 results from user's search | 
 
 
 | Component | Priority | Estimated Time | Actual Time |
 | --- | :---: |  :---: | :---: |
-| Adding Form | H | 3hrs| 0hrs |
-| Working with API | H | 3.5hrs| 0hrs |
-| Rendering API on App | H | 3hrs | 0hrs |
-| Total | H | 9.5hrs| 0hrs | 
+| Adding Form | H | 3hrs| 2hrs |
+| Working with API | H | 3.5hrs| 3.5hrs |
+| Rendering API on App | H | 3hrs | 3hrs |
+| Total | H | 9.5hrs| 8.5hrs | 
 
 ## Additional Libraries
  

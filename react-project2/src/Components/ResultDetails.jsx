@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { throwStatement } from "@babel/types";
+import "./Components.css";
 import OneResult from "./OneResult";
 
 class ResultDetails extends Component {
@@ -8,31 +8,37 @@ class ResultDetails extends Component {
     super(props);
 
     this.state = {
-      redirect: "",
-    };
-  }
+      redirect: ""
+    }
+}
 
   setRedirect = evt => {
     this.setState({
-      redirect: true,
+        redirect: true
     });
-  };
+};
+
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to="/target" />;
+        return <Redirect to={{
+           pathname: "/target",
+           state: {inputValue: this.props.inputValue}
+        }}/>;
     }
-  };
+};
 
   render() {
     return (
-      <div key={this.props.index}>
+      <div className="song-parts" key={this.props.index}>
         {this.renderRedirect()}
         <h4>{this.props.result.name}</h4>
         <h5 onClick={this.setRedirect}>{this.props.result.artist.name}</h5>
         <p>
-          Listeners: {Number(this.props.result.playcount).toLocaleString("en")}
+          Playcount: {Number(this.props.result.playcount).toLocaleString("en")}
         </p>
-        <a href={this.props.result.url}>last.fm Profile</a>
+        <a href={this.props.result.url}>Click for more info</a>
+ {/* <OneResult inputValue={this.props.inputValue}/> */}
+
       </div>
     );
   }

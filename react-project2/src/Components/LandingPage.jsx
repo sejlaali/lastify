@@ -1,15 +1,24 @@
-import React, {Component} from 'react'
-import {Link} from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import "./Components.css";
 
 class LandingPage extends Component {
-    render() {
-        return (
-            <div>
-                <h1>Artist Search</h1>
-                <button><Link to="/homepage">Enter</Link></button>
-            </div>
-        )
-    }
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Artist Search</h1>
+        <div className="button">
+          <button>
+            <Link to="/homepage">Enter</Link>
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default LandingPage
+export default LandingPage;

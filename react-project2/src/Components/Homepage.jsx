@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Input from "./Input"
+import './Components.css'
 
 class Homepage extends Component {
     constructor(props){

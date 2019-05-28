@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import dotenv from 'dotenv'
+import './Components.css'
+
 
 dotenv.config();
 let key = process.env.REACT_APP_API_KEY;
@@ -13,18 +15,19 @@ constructor(props) {
         name: "",
         info: "",
     }
+    this.getResults = this.getResults.bind(this)
+    this.getResults()
 }
 
- async componentDidMount() {
-let res = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=drake&api_key=${key}&format=json`)
-        this.setState ({
+ async getResults() {
+let res = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${this.props.location.state.inputValue}&api_key=${key}&format=json`)
+this.setState ({
             name: res.data.artist.name,
           info: res.data.artist.bio.summary,
         })
     }
 
     render() {
-
         return (
             <div>
                 <h1>{this.state.name}</h1>
