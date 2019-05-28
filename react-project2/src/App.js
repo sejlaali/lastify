@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import "./App.css";
 import {Route} from 'react-router-dom'
 import LandingPage from './Components/LandingPage'
-import Homepage from "./Components/Homepage"
 import OneResult from './Components/OneResult'
+import Input from "./Components/Input"
 
 
 class App extends Component {
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div>
       <Route exact path="/" component={LandingPage} />
-       <Route exact path="/homepage" component={Homepage} />
+       <Route exact path="/homepage" component={Input} />
        <Route exact path="/target" component={OneResult} />
       </div>
     );

@@ -8,9 +8,15 @@ h1 {
     justify-content: center;
 }
 
+input {
+    width: 40%;
+    border:3px solid turquoise;
+}
+
 button {
     padding: 5px 15px;
     font-size: 18px;
+    margin: 0 4px;
 }
 
 .song-results {
@@ -48,4 +54,9 @@ a {
 h2 {
     width: 100%;
     text-align: center;
+}
+
+select {
+    font-size: 20px;
+    margin: 0 5px;
 }
