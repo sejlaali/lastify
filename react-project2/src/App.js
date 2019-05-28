@@ -18,6 +18,7 @@ class App extends Component {
       <Route exact path="/" component={LandingPage} />
        <Route exact path="/homepage" component={Input} />
        <Route exact path="/target" component={OneResult} />
+
       </div>
     );
   }

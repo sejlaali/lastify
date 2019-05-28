@@ -20,9 +20,8 @@ constructor(props) {
 }
 
  async getResults() {
-     const artistName = this.props.option === "artist" ? this.props.location.state.inputVal : this.props.location.state.songInputValue
+const artistName = this.props.location.state.option === "artist" ? this.props.location.state.inputVal : this.props.location.state.songInputValue
 let res = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=artist.getinfo&artist=${artistName}&api_key=${key}&format=json`)
-console.log(res)
 this.setState ({
             name: res.data.artist.name,
           info: res.data.artist.bio.summary,

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./Components.css";
-import OneResult from "./OneResult";
 
 class ResultDetails extends Component {
   constructor(props) {
@@ -22,8 +21,7 @@ class ResultDetails extends Component {
     if (this.state.redirect) {
         return <Redirect to={{
            pathname: "/target",
-           state: {inputVal: this.props.result},
-           state: {songInputValue: this.props.result.artist}
+           state: {inputVal: this.props.result.artist.name, songInputValue: this.props.result.artist, option: this.props.option},
         }}/>;
     }
 };
@@ -34,10 +32,11 @@ class ResultDetails extends Component {
     </p> </div>  :  <h5 onClick={this.setRedirect}>{this.props.result.artist}</h5>
 
     return (
-      <div className="song-parts" key={this.props.index}>
+      <div onClick={this.props.playNext} className="song-parts" key={this.props.index}>
         {this.renderRedirect()}
-        <h4>{this.props.result.name}</h4>
+        <h4 >{this.props.result.name}</h4>
         {artistOrSong}
+        <i class="large material-icons">play_arrow</i>
         <a target="_blank" href={this.props.result.url}>Click for more info</a>
       </div>
     );

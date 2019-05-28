@@ -15,7 +15,7 @@
 
 ## Project Description
 
-I will create a React app that allows users to search for a song or artist and have either the song or the artists' songs render (by getting the data from the API). Then they should be able to click on the image that renders to play the song.
+I will create a React app that allows users to search for a song or artist and have either the song or the artists' songs render (by getting the data from the API). Then they should be able to click on an icon that will play a preview of the song.
 
 I originally wanted to use SoundCloud's API but they aren't allowing any more "apps to be registered" so I will use last.fm's API : 
 https://www.last.fm/api 
@@ -36,9 +36,8 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662781/IMG_3602.jpg
 
 #### PostMVP 
 
--Ability to play song chosen*
+- Ability to play preview of song chosen by clicking on a "play" icon
 - Add songs/artists to favorites section
--Add queue button
 
 ## React Architectural Design
 
@@ -48,9 +47,11 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 
 | Component | Description | 
 | --- | :---: |  
-| Homepage | This will render the "landing page" with a button to enter| 
-| Input Forms | Input form | 
-| SearchResults | 26 results from user's search | 
+| Landing Page | This will render the "landing page" with a button to enter| 
+| Input | Input form and default top tracks | 
+| Search Results | 26 results from user's search | 
+| One Result | Summary of artist bio |
+| Itunes | Media player |
 
 
 | Component | Priority | Estimated Time | Actual Time |
@@ -58,7 +59,9 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 | Adding Form | H | 3hrs| 2hrs |
 | Working with API | H | 3.5hrs| 3.5hrs |
 | Rendering API on App | H | 3hrs | 3hrs |
-| Total | H | 9.5hrs| 8.5hrs | 
+| Differentiating between song and artist search | H | 2hrs | 2.5hrs |
+| Click event that will preview song in media player | M | 3.5 hrs | 0hrs | 
+| Total | H | 15hrs| 11hrs | 
 
 ## Additional Libraries
  

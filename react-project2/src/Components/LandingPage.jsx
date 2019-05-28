@@ -10,10 +10,10 @@ class LandingPage extends Component {
   render() {
     return (
       <div>
-        <h1>Artist Search</h1>
-        <div className="button">
-          <button>
-            <Link to="/homepage">Enter</Link>
+        <h1>Music Search</h1>
+        <div>
+          <button className="button">
+            <Link className="button" to="/homepage">Enter</Link>
           </button>
         </div>
       </div>

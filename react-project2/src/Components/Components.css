@@ -3,7 +3,7 @@ h1 {
     text-align: center;
 }
 
-.button, form {
+ form, div>.button {
     display: flex;
     justify-content: center;
 }
@@ -13,16 +13,19 @@ input {
     border:3px solid turquoise;
 }
 
-button {
+.button {
     padding: 5px 15px;
-    font-size: 18px;
-    margin: 0 4px;
+    font-size: 26px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto;
 }
 
-.song-results {
+.song-results, .top-tracks {
     display: flex;
     flex-wrap: wrap;
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
     margin-top: 10px;
@@ -59,4 +62,18 @@ h2 {
 select {
     font-size: 20px;
     margin: 0 5px;
+}
+
+.media-player {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    border: 1px solid red;
+}
+
+i {
+    width: 100%;
+    color: navy;
 }
