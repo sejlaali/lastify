@@ -8,9 +8,9 @@
 |Day 1| Project Description | Complete
 |Day 2| Wireframes / Priority Matrix / Functional Components | Complete
 |Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| Pseudocode / actual code | Incomplete
-|Day 5| Initial Clickable Model  | Incomplete
-|Day 6| MVP | Incomplete
+|Day 4| Pseudocode / actual code | Complete
+|Day 5| Initial Clickable Model  | Complete
+|Day 6| MVP | Complete
 |Day 7| Present | Incomplete
 
 ## Project Description
@@ -48,8 +48,8 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 | Component | Description | 
 | --- | :---: |  
 | Landing Page | This will render the "landing page" with a button to enter| 
-| Input | Input form and default top tracks | 
-| Search Results | 26 results from user's search | 
+| Input | Input form and default top tracks, mapping over api results and storing in Search Results component| 
+| Search Results | 30 results from user's search | 
 | One Result | Summary of artist bio |
 | Itunes | Media player |
 
@@ -60,8 +60,8 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 | Working with API | H | 3.5hrs| 3.5hrs |
 | Rendering API on App | H | 3hrs | 3hrs |
 | Differentiating between song and artist search | H | 2hrs | 2.5hrs |
-| Click event that will preview song in media player | M | 3.5 hrs | 0hrs | 
-| Total | H | 15hrs| 11hrs | 
+| Click event that will preview song in media player | M | 3.5 hrs | 4hrs | 
+| Total | H | 15hrs| 15hrs | 
 
 ## Additional Libraries
  
