@@ -48,10 +48,12 @@ class Input extends Component {
           this.state.inputValue
         }&api_key=${key}&limit=36&format=json`;
         axios.get(url).then(res => {
+        this.state.inputValue != res.data.toptracks.track ? alert('Please check your spelling') :
           this.setState({
             allResults: res.data.toptracks.track,
             artist: this.state.inputValue,
-            activeSearch: true
+            activeSearch: true,
+            inputValue: ""
           });
         });
       } else {
@@ -59,9 +61,11 @@ class Input extends Component {
           this.state.inputValue
         }&api_key=${key}&limit=36&format=json`;
         axios.get(url).then(res => {
-          this.setState({
+            this.state.inputValue != res.data.results.trackmatches.track ? alert('Please check your spelling') :
+            this.setState({
             allResults: res.data.results.trackmatches.track,
-            activeSearch: true
+            activeSearch: true,
+            inputValue: ""
           });
         });
       }
@@ -77,23 +81,23 @@ class Input extends Component {
     });
   }
 
-
-  playNext = (result) => {
-
-    this.setState({
-      currentSong: result.name
-    }, () => {
+  playNext = result => {
+    this.setState(
+      {
+        currentSong: result.name
+      },
+      () => {
         axios
-        .get(`https://itunes.apple.com/search?term=${this.state.currentSong}`)
-        .then(res =>
+          .get(`https://itunes.apple.com/search?term=${this.state.currentSong}`)
+          .then(res =>
             //    console.log(res)
-        this.setState({
-            preview: res.data.results[0].previewUrl
-    })
-        )
-})
-
-  }
+            this.setState({
+              preview: res.data.results[0].previewUrl
+            })
+          );
+      }
+    );
+  };
 
   render() {
     const header = this.state.activeSearch ? (
@@ -102,16 +106,18 @@ class Input extends Component {
       <h3>Search Below</h3>
     );
     const topTracks = this.state.topTracks.map((track, i) => (
-        <li key={i}>
-          {track.name} 
-          <h5>{track.artist.name}</h5>
-        </li>
+      <li key={i}>
+        {track.name}
+        <h5>{track.artist.name}</h5>
+      </li>
     ));
 
     return (
       <div className="input">
-          <h1>LAST<span>ify</span></h1>
-          <hr />
+        <h1>
+          LAST<span>ify</span>
+        </h1>
+        <hr />
         <div>
           {header}
           <select class="styled-select" onChange={this.optionSelected}>
@@ -130,28 +136,26 @@ class Input extends Component {
             <button type="submit">ENTER</button>
           </form>
         </div>
-        <div className="song-results-parent">
-          <div className="song-results">
-            {this.state.allResults.map((result, i) => (
-              <ResultDetails
-                result={result}
-                index={i}
-                option={this.state.option}
-                inputValue={this.state.artist}
-                playNext={this.playNext}
-              />
-            ))}
-
-            {this.state.allResults.length <= 0 ? (
-              <div className="top-tracks">
-                <h2>TOP TRACKS OF 2019</h2> 
-             <ol className="top-track-details"> {topTracks}</ol> 
-              </div>
-            ) : (
-              <div />
-            )}
-          </div>
+        <div id="song-results">
+          {this.state.allResults.map((result, i) => (
+            <ResultDetails
+              result={result}
+              index={i}
+              option={this.state.option}
+              inputValue={this.state.artist}
+              playNext={this.playNext}
+            />
+          ))}
         </div>
+
+        {this.state.allResults.length <= 0 ? (
+          <div className="top-tracks">
+            <h2>TOP TRACKS OF 2019</h2>
+            <ol className="top-track-details"> {topTracks}</ol>
+          </div>
+        ) : (
+          <div />
+        )}
         <Itunes preview={this.state.preview} />
       </div>
     );

@@ -45,17 +45,22 @@ class ResultDetails extends Component {
     const artistOrSong =
       this.props.option === "artist" ? (
         <div>
-          {" "}
-          <h5 onClick={this.setRedirect}>
+          <h5 className="result-artist" onClick={this.setRedirect}>
             {this.props.result.artist.name}
-          </h5>{" "}
+          </h5>
           <p>
             Playcount:{" "}
             {Number(this.props.result.playcount).toLocaleString("en")}
           </p>{" "}
         </div>
       ) : (
-        <h5 onClick={this.setRedirect}>{this.props.result.artist}</h5>
+       <div>
+        <h5 className="result-artist" onClick={this.setRedirect}>{this.props.result.artist}</h5>
+        <p>
+        Listeners: {" "}
+        {Number(this.props.result.listeners).toLocaleString("en")}
+      </p>
+      </div>
       );
 
     return (
@@ -65,11 +70,10 @@ class ResultDetails extends Component {
         <h4>
           {this.props.result.name}
         </h4>
-        {/* <i onClick={this.playSong} class="large material-icons">play_arrow</i> */}
         {artistOrSong}
-        <a target="_blank" href={this.props.result.url}>
+        {/* <a target="_blank" href={this.props.result.url}>
           Click for more info
-        </a>
+        </a> */}
       </div>
     );
   }

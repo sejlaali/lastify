@@ -2,17 +2,17 @@ h1 {
   width: 100%;
   font-size: 4.8em;
   text-align: center;
-  color: #0FFF95;
+  color: #0fff95;
   padding-top: 3.5%;
   margin-top: -10px;
   margin-bottom: 0px;
-  font-family: 'Julius sans one', sans-serif;
+  font-family: "Julius sans one", sans-serif;
   letter-spacing: 6px;
   font-weight: 600;
 }
 
 h1 > span {
-  font-size: 4.0rem;
+  font-size: 4rem;
   font-weight: 400;
 }
 
@@ -60,7 +60,7 @@ input {
   border: none;
   color: white;
   font-size: 1.5rem;
-border-bottom: .5px solid white;
+  border-bottom: 0.5px solid white;
 }
 
 input:focus {
@@ -86,43 +86,52 @@ form > button {
   margin: 0 auto;
 }
 
+#song-results {
+  margin-bottom: 10%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
 
 .top-tracks {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;  
+  width: 100%;
   text-align: center;
+  margin: 0 auto;
   margin-top: 10px;
 }
 
-.song-results {
-  margin: 0 auto;
-  margin-top: 5%;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  width: 100%;  
-  text-align: center;
-}
-
 .song-parts {
-  width: 100%;
+  width: 85%;
+  margin: 5px auto;
   display: flex;
   text-align: center;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  border: 1px solid salmon;
-  margin: 0;
+  border-bottom: 2px solid #bb342f;
+  font-family: "open sans", sans-serif;
 }
 
-h5 {
-  margin: 25px 40px;
+.result-artist {
+  margin: 10px 0px;
+  font-size: 1em;
+  font-style: italic;
+  text-align: right;
+  transition: background-color 0.8s, color 0.8s;
 }
 
-a {
-  font-size: 10px;
+.result-artist:hover {
+  background-color: #0fff95;
   color: black;
+}
+
+p {
+  font-size: 14px;
+  text-align: right;
 }
 
 .top-tracks {
@@ -142,11 +151,11 @@ a {
 li {
   width: 90%;
   text-align: left;
-   border: 1px solid #A9E5BB;
-   padding: 3% 2%;
+  border: 1px solid #a9e5bb;
+  padding: 3% 2%;
 }
 
-li>h5 {
+li > h5 {
   width: 100%;
   padding: 5px 0px;
   text-align: left;
@@ -158,7 +167,7 @@ h2 {
   text-align: center;
   font-size: 2em;
   margin-bottom: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 .media-player {
@@ -167,12 +176,12 @@ h2 {
   position: fixed;
   left: 0;
   bottom: 0;
-  /* border: 1px solid red; */
+  outline: none;
 }
 
 i {
   display: block;
-  width: 20%;
+  width: 8%;
   text-align: center;
   color: ivory;
   border: 1px solid;
