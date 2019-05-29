@@ -9,6 +9,7 @@ class ResultDetails extends Component {
 
     this.state = {
       redirect: "",
+      img: "",
     };
   }
 
@@ -35,6 +36,11 @@ class ResultDetails extends Component {
     }
   };
 
+//   playSong = () => {
+//     this.props.playNext(this.props.result)
+//   }
+
+
   render() {
     const artistOrSong =
       this.props.option === "artist" ? (
@@ -55,10 +61,11 @@ class ResultDetails extends Component {
     return (
       <div className="song-parts" key={this.props.index}>
         {this.renderRedirect()}
-        <h4 onClick={this.props.playNext}>
+        <i onClick={()=> [this.props.playNext(this.props.result)]} class="large material-icons">play_arrow</i>
+        <h4>
           {this.props.result.name}
-          <i class="large material-icons">play_arrow</i>
         </h4>
+        {/* <i onClick={this.playSong} class="large material-icons">play_arrow</i> */}
         {artistOrSong}
         <a target="_blank" href={this.props.result.url}>
           Click for more info

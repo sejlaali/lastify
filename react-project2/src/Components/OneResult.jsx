@@ -38,9 +38,8 @@ class OneResult extends Component {
       name: res.data.artist.name,
       info
     });
-    
+
     axios.get(`https://itunes.apple.com/search?term=${artistName}`).then(res =>
-        //  console.log(res)
       this.setState({
         img: res.data.results[0].artworkUrl100
       })
