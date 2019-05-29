@@ -7,24 +7,27 @@ class Itunes extends Component {
     super(props);
 
     this.state = {
-      preview: ""
+      preview: "",
+      img: ""
     };
   }
 
   componentDidMount = () => {
-    axios.get(`https://itunes.apple.com/search?term=drake`).then(res =>
+    axios.get(`https://itunes.apple.com/search?term=in+my+feelings`).then(res =>
+    // console.log(res.data.results)
       this.setState({
-        preview: res.data.results[0].previewUrl
+        preview: res.data.results[0].previewUrl,
+        img: res.data.results[0].artworkUrl60
       })
       );
     };
     
     render() {
-        // console.log(this.state.preview)
     return (
     <div>
         <video className="media-player" controls autoplay src={this.state.preview} type="audio/m4a">
         </video>
+        {/* <img src={this.state.img} /> */}
     </div>
     );
   }

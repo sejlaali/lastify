@@ -1,79 +1,96 @@
 h1 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
- form, div>.button {
-    display: flex;
-    justify-content: center;
+form,
+div > .button {
+  display: flex;
+  justify-content: center;
 }
 
 input {
-    width: 40%;
-    border:3px solid turquoise;
+  width: 40%;
+  border: 3px solid turquoise;
 }
 
 .button {
-    padding: 5px 15px;
-    font-size: 26px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    margin: 0 auto;
+  padding: 5px 15px;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
 }
 
-.song-results, .top-tracks {
-    display: flex;
-    flex-wrap: wrap;
-    width: 70%;
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 10px;
+.song-results,
+.top-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .song-parts {
-width: 46%;
-border: 1px solid tomato;
-padding: 10px;
+  width: 35%;
+  border: 1px solid salmon;
+  padding: 10px;
+  margin: 0 auto;
 }
 
 h5 {
-    margin: 25px 40px;
+  margin: 25px 40px;
 }
 
 a {
-    font-size: 10px;
-    color: black;
+  font-size: 10px;
+  color: black;
 }
 
 .top-tracks {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    border: 1px solid teal;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid teal;
 }
 
 h2 {
-    width: 100%;
-    text-align: center;
+  width: 100%;
+  text-align: center;
 }
 
 select {
-    font-size: 20px;
-    margin: 0 5px;
+  font-size: 20px;
+  margin: 0 5px;
 }
 
 .media-player {
-    height: 50px;
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    border: 1px solid red;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border: 1px solid red;
 }
 
 i {
-    width: 100%;
-    color: navy;
+  width: 100%;
+  color: navy;
+}
+
+.artist-info {
+    text-align: center;
+    line-height: 110%;
+    width: 50%;
+    height: 300px;
+    overflow: auto;
+    margin: 0 auto;
+    line-height: 130%;
+}
+
+img {
+margin: 0 auto;
 }
