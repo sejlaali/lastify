@@ -1,7 +1,7 @@
 #landing-page-div {
   width: 100%;
   margin: 30% 0 0 0;
-  padding-top: 25%;
+  padding-top: 14.5%;
 }
 
 body {
@@ -12,12 +12,13 @@ body {
 #landing-page-div > h1 {
   position: fixed;
   top: 0px;
-  padding: 10% 0;
+  height: 9%;
+  padding: 12% 0;
   font-size: 7em;
   background-image: url(https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 0 -120px;
+  background-position: 0 -90px;
 }
 
 #landing-page-div > h1 > span {
@@ -30,12 +31,12 @@ body {
 
 #landing-page-div > p {
   color: white;
-  width: 100%;
+  max-width: 100%;
   text-align: center;
   font-size: 28px;
   font-family: "Montserrat", sans-serif;
   font-weight: 200;
-  margin: 15px 0px;
+  margin: 12px 0px;
 }
 
 .button,
@@ -72,7 +73,7 @@ footer {
   text-align: center;
   font-size: 11px;
   padding: 5px 0;
-  bottom: -190px;
+  bottom: -270px;
 }
 
 h1 {
@@ -92,6 +93,12 @@ h1 > span {
   font-size: 4rem;
   font-weight: 600;
   color: white;
+}
+
+i.music {
+  border: 0;
+  color: #0fff95;
+  font-size: 28px;
 }
 
 .title {
@@ -325,6 +332,7 @@ i.back-home {
   #landing-page-div > h1 {
     font-size: 8.7em;
     padding: 15% 0 0 0;
+    height: 19.5%;
     background-position: 0 -190px;
   }
   #landing-page-div > h1 > span {
@@ -332,14 +340,14 @@ i.back-home {
   }
   #landing-page-div > p {
     font-size: 40px;
-    margin: 4% auto;
+    margin: 3% auto;
   }
-
   h1 {
     font-size: 5em;
   }
   .button-html {
     margin: 12% auto 0 auto;
+    border-radius: 50px;
   }
   input {
     font-size: 2.45em;
@@ -364,23 +372,25 @@ i.back-home {
   }
   i {
     width: 6%;
-    padding: .8%;
+    padding: 0.8%;
   }
-.song-parts {
-  font-size: 1.2em;
-}
-.artist-info {
-  border: 2px solid #bb342f;
-  width: 60%;
+  .song-parts {
+    font-size: 1.2em;
+  }
+  .artist-info {
+    border: 2px solid #bb342f;
+    width: 60%;
+  }
 }
 @media all and (min-width: 1024px) {
   #landing-page-div {
     padding-top: 0;
   }
   #landing-page-div > h1 {
-    padding-top: 11%;
-    background-position: 0 -300px;
-    font-size: 10em;
+    padding-top: 10%;
+    background-position: 0 -390px;
+    font-size: 12.5em;
+    height: 25.5%;
   }
   #landing-page-div > p {
     font-size: 40px;
@@ -388,13 +398,45 @@ i.back-home {
   }
   .button-html {
     margin: 8% auto 0 auto;
+    font-size: 3em;
+    padding: 2.5% 6.5%;
+  }
+  .button {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 1.2em;
+  }
+
+  h1 {
+    font-size: 7.3em;
+    padding-top: 2%;
+    box-shadow: 15px -20px 40px lightgray;
+  }
+  h1 > span {
+    font-size: 6rem;
+    display: inline-block;
+    width: 14%;
+  }
+
+  .styled-select {
+    width: 35%;
+    height: 10%;
+    font-size: 1.5em;
+    padding: 1% 2%;
+    text-align: center;
+  }
+  input {
+    font-size: 3em;
+  }
+
+  form > button {
+    font-size: 2em;
+    margin-top: 3%;
+    padding: 10px 35px;
   }
   footer {
     margin-top: 0;
     padding-top: 0;
   }
-  #song-results {
-  
-  }
-}
 }

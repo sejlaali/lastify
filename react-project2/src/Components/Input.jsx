@@ -49,25 +49,20 @@ class Input extends Component {
           this.state.inputValue
         }&api_key=${key}&limit=36&format=json`;
         axios.get(url).then(res => {
-        // this.state.inputValue != res.data.toptracks.track ? alert('Please check your spelling') :
-          this.setState({
+          res.data.toptracks ?  this.setState({
             allResults: res.data.toptracks.track,
-            artist: this.state.inputValue,
             activeSearch: true,
-            // inputValue: ""
-          });
-        });
+          }) : alert('Please check your spelling') 
+        })
       } else {
           let url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
               this.state.inputValue
             }&api_key=${key}&limit=36&format=json`;
             axios.get(url).then(res => {
-        // this.state.inputValue != res.data.results.trackmatches.track ? alert('Please check your spelling') :
-            this.setState({
+              res.data.trackmatches ?  this.setState({
             allResults: res.data.results.trackmatches.track,
             activeSearch: true,
-            // inputValue: ""
-          });
+          }) : alert('Please check your spelling')
         });
       }
     }
@@ -85,24 +80,30 @@ class Input extends Component {
   playNext = result => {
     this.setState(
       {
-        currentSong: result.name
+        currentSong: result,
       },
       () => {
         axios
-          .get(`https://itunes.apple.com/search?term=${this.state.currentSong}`)
-          .then(res =>
-            //    console.log(res)
+          .get(`https://itunes.apple.com/search?term=${this.state.currentSong.name}`)
+          .then(res => {
             this.setState({
-              preview: res.data.results[0].previewUrl
+              artist: this.state.currentSong.artist.name ? this.state.currentSong.artist.name : this.state.currentSong.artist
             })
-          );
+              let filter =  res.data.results.filter(song => {
+                return  (song.artistName.toUpperCase() == this.state.artist.toUpperCase())
+               })
+               this.setState({
+                 preview: filter[0].previewUrl
+               })
+               
+           });
       }
     );
   };
 
   render() {
     const header = this.state.activeSearch ? (
-      <h3>Currently Searching: {this.state.inputValue.toUpperCase()}</h3>
+      <h3>Currently Playing: {this.state.currentSong.name}</h3>
     ) : (
       <h3>Search Below</h3>
     );
@@ -126,6 +127,7 @@ class Input extends Component {
             <option value="artist">Artist</option>
             <option value="song">Song</option>
           </select>
+        
           <form onSubmit={this.handleSubmit}>
             <input
               autocomplete="off"
@@ -152,7 +154,8 @@ class Input extends Component {
 
         {this.state.allResults.length <= 0 ? (
           <div className="top-tracks">
-            <h2>TOP TRACKS OF 2019</h2>
+            <h2>TOP TRACKS OF 2019<i className="music material-icons">library_music</i>
+</h2>
             <ol className="top-track-details"> {topTracks}</ol>
           </div>
         ) : (

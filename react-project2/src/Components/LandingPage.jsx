@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import "./Components.css";
 
 class LandingPage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
