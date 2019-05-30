@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import ResultDetails from "./ResultDetails";
 import "./Components.css";
 import Itunes from "./Itunes";
+import {Link} from "react-router-dom"
 
 dotenv.config();
 let key = process.env.REACT_APP_API_KEY;
@@ -48,24 +49,24 @@ class Input extends Component {
           this.state.inputValue
         }&api_key=${key}&limit=36&format=json`;
         axios.get(url).then(res => {
-        this.state.inputValue != res.data.toptracks.track ? alert('Please check your spelling') :
+        // this.state.inputValue != res.data.toptracks.track ? alert('Please check your spelling') :
           this.setState({
             allResults: res.data.toptracks.track,
             artist: this.state.inputValue,
             activeSearch: true,
-            inputValue: ""
+            // inputValue: ""
           });
         });
       } else {
-        let url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
-          this.state.inputValue
-        }&api_key=${key}&limit=36&format=json`;
-        axios.get(url).then(res => {
-            this.state.inputValue != res.data.results.trackmatches.track ? alert('Please check your spelling') :
+          let url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
+              this.state.inputValue
+            }&api_key=${key}&limit=36&format=json`;
+            axios.get(url).then(res => {
+        // this.state.inputValue != res.data.results.trackmatches.track ? alert('Please check your spelling') :
             this.setState({
             allResults: res.data.results.trackmatches.track,
             activeSearch: true,
-            inputValue: ""
+            // inputValue: ""
           });
         });
       }
@@ -114,9 +115,10 @@ class Input extends Component {
 
     return (
       <div className="input">
-        <h1>
+       <Link className="title" to="/"><h1>
           LAST<span>ify</span>
         </h1>
+        </Link>
         <hr />
         <div>
           {header}

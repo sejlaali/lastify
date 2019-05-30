@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import dotenv from "dotenv";
 import "./Components.css";
+import {Link} from 'react-router-dom'
 
 dotenv.config();
 let key = process.env.REACT_APP_API_KEY;
@@ -48,10 +49,11 @@ class OneResult extends Component {
 
   render() {
     return (
-      <div>
+      <div id="one-result-div">
         <h1>{this.state.name}</h1>
         <img src={this.state.img} />
         <h5 className="artist-info">{this.state.info}</h5>
+       <Link to="/homepage"><i className="material-icons back-home">keyboard_arrow_left</i></Link>
       </div>
     );
   }

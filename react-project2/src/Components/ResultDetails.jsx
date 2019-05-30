@@ -36,11 +36,6 @@ class ResultDetails extends Component {
     }
   };
 
-//   playSong = () => {
-//     this.props.playNext(this.props.result)
-//   }
-
-
   render() {
     const artistOrSong =
       this.props.option === "artist" ? (
@@ -66,7 +61,7 @@ class ResultDetails extends Component {
     return (
       <div className="song-parts" key={this.props.index}>
         {this.renderRedirect()}
-        <i onClick={()=> [this.props.playNext(this.props.result)]} class="large material-icons">play_arrow</i>
+        <i onClick={()=> [this.props.playNext(this.props.result)]} className="large material-icons">play_arrow</i>
         <h4>
           {this.props.result.name}
         </h4>
