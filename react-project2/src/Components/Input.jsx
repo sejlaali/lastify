@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import ResultDetails from "./ResultDetails";
 import "./Components.css";
 import Itunes from "./Itunes";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 dotenv.config();
 let key = process.env.REACT_APP_API_KEY;
@@ -49,20 +49,24 @@ class Input extends Component {
           this.state.inputValue
         }&api_key=${key}&limit=36&format=json`;
         axios.get(url).then(res => {
-          res.data.toptracks ?  this.setState({
-            allResults: res.data.toptracks.track,
-            activeSearch: true,
-          }) : alert('Please check your spelling') 
-        })
+          res.data.toptracks
+            ? this.setState({
+                allResults: res.data.toptracks.track,
+                activeSearch: true
+              })
+            : alert("Please check your spelling");
+        });
       } else {
-          let url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
-              this.state.inputValue
-            }&api_key=${key}&limit=36&format=json`;
-            axios.get(url).then(res => {
-              res.data.trackmatches ?  this.setState({
-            allResults: res.data.results.trackmatches.track,
-            activeSearch: true,
-          }) : alert('Please check your spelling')
+        let url = `http://ws.audioscrobbler.com/2.0/?method=track.search&track=${
+          this.state.inputValue
+        }&api_key=${key}&limit=36&format=json`;
+        axios.get(url).then(res => {
+          res.data.results.trackmatches
+            ? this.setState({
+                allResults: res.data.results.trackmatches.track,
+                activeSearch: true
+              })
+            : alert("Please check your spelling");
         });
       }
     }
@@ -80,33 +84,38 @@ class Input extends Component {
   playNext = result => {
     this.setState(
       {
-        currentSong: result,
+        currentSong: result
       },
       () => {
         axios
-          .get(`https://itunes.apple.com/search?term=${this.state.currentSong.name}`)
+          .get(
+            `https://itunes.apple.com/search?term=${
+              this.state.currentSong.name
+            }`
+          )
           .then(res => {
             this.setState({
-              artist: this.state.currentSong.artist.name ? this.state.currentSong.artist.name : this.state.currentSong.artist
-            })
-              let filter =  res.data.results.filter(song => {
-                return  (song.artistName.toUpperCase() == this.state.artist.toUpperCase())
-               })
-               this.setState({
-                 preview: filter[0].previewUrl
-               })
-               
-           });
+              artist: this.state.currentSong.artist.name
+                ? this.state.currentSong.artist.name
+                : this.state.currentSong.artist
+            });
+            let filter = res.data.results.filter(song => {
+              return (
+                song.artistName.toUpperCase() == this.state.artist.toUpperCase()
+              );
+            });
+            this.setState({
+              preview: filter[0].previewUrl
+            });
+          });
       }
     );
   };
 
   render() {
-    const header = this.state.activeSearch ? (
+    const header = this.state.preview ? (
       <h3>Currently Playing: {this.state.currentSong.name}</h3>
-    ) : (
-      <h3>Search Below</h3>
-    );
+    ) : <h3></h3>
     const topTracks = this.state.topTracks.map((track, i) => (
       <li key={i}>
         {track.name}
@@ -116,18 +125,25 @@ class Input extends Component {
 
     return (
       <div className="input">
-       <Link className="title" to="/"><h1>
-          LAST<span>ify</span>
-        </h1>
+        <nav>
+        <Link className="title" to="/">
+          <h1>
+            LAST<span>ify</span>
+          </h1>
         </Link>
+          <ul>
+          <li><a target="blank" href="https://www.last.fm/home">Last.fm</a></li>
+          <li><a target="blank" href="https://www.spotify.com/is/">Spotify</a></li>
+          <li><a target="blank" href="https://www.apple.com/itunes/">iTunes</a></li>
+          </ul>
+          </nav>
         <hr />
-        <div>
-          {header}
+        {header}
+        <div className="header">
           <select class="styled-select" onChange={this.optionSelected}>
             <option value="artist">Artist</option>
             <option value="song">Song</option>
           </select>
-        
           <form onSubmit={this.handleSubmit}>
             <input
               autocomplete="off"
@@ -139,6 +155,7 @@ class Input extends Component {
             />
             <button type="submit">ENTER</button>
           </form>
+
         </div>
         <div id="song-results">
           {this.state.allResults.map((result, i) => (
@@ -154,8 +171,10 @@ class Input extends Component {
 
         {this.state.allResults.length <= 0 ? (
           <div className="top-tracks">
-            <h2>TOP TRACKS OF 2019<i className="music material-icons">library_music</i>
-</h2>
+            <h2>
+              TOP TRACKS OF 2019
+              <i className="music material-icons">library_music</i>
+            </h2>
             <ol className="top-track-details"> {topTracks}</ol>
           </div>
         ) : (

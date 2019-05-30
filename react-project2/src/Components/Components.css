@@ -10,6 +10,7 @@ body {
 }
 
 #landing-page-div > h1 {
+  box-shadow: none;
   position: fixed;
   top: 0px;
   height: 9%;
@@ -89,6 +90,10 @@ h1 {
   font-weight: 600;
 }
 
+nav > ul {
+  display: none;
+}
+
 h1 > span {
   font-size: 4rem;
   font-weight: 600;
@@ -103,6 +108,7 @@ i.music {
 
 .title {
   text-decoration: none;
+  color: white;
 }
 
 h3 {
@@ -189,6 +195,10 @@ form > button:hover {
   text-align: center;
   margin: 0 auto;
   margin-top: 10px;
+  width: 100%;
+  /* border: 1px solid white; */
+  margin: 20px auto 50px auto;
+  color: white;
 }
 
 .song-parts {
@@ -220,13 +230,6 @@ form > button:hover {
 p {
   font-size: 14px;
   text-align: right;
-}
-
-.top-tracks {
-  width: 100%;
-  /* border: 1px solid white; */
-  margin: 20px auto 50px auto;
-  color: white;
 }
 
 .top-track-details {
@@ -268,7 +271,7 @@ h2 {
   outline: none;
 }
 
-i {
+i.play-song {
   display: block;
   width: 8%;
   text-align: center;
@@ -278,7 +281,7 @@ i {
   transition: all 0.6s ease-in-out;
 }
 
-i:hover {
+i.play-song:hover {
   background-color: #bb342f;
   border: none;
   color: #a9e5bb;
@@ -286,19 +289,24 @@ i:hover {
   border-radius: 90px;
 }
 
-.artist-info {
+h5.artist-info,
+h5.artist-info-empty {
   text-align: center;
   font-family: "Open Sans", sans-serif;
   font-size: 0.8em;
   line-height: 160%;
-  width: 70%;
-  height: 40vh;
+  width: 30%;
+  height: 30vh;
   overflow: auto;
   margin: 0px auto;
   padding: 10px 15px;
   background-color: white;
 }
 
+.artist-info-empty {
+  width: 15%;
+  height: 8vh;
+}
 img {
   display: block;
   margin: 55px auto;
@@ -316,6 +324,7 @@ img {
   font-size: 4em;
   margin-top: 5%;
   color: #bb342f;
+  box-shadow: none;
 }
 
 i.back-home {
@@ -323,6 +332,16 @@ i.back-home {
   width: 100%;
   margin: 70px auto 0 auto;
   font-size: 40px;
+  text-align: center;
+  color: white;
+  transition: all 1s;
+}
+
+i.back-home:hover {
+  background-color: #bb342f;
+  border: none;
+  color: #a9e5bb;
+  transform: scale(1.1);
 }
 
 @media all and (min-width: 768px) {
@@ -332,7 +351,7 @@ i.back-home {
   #landing-page-div > h1 {
     font-size: 8.7em;
     padding: 15% 0 0 0;
-    height: 19.5%;
+    height: 19%;
     background-position: 0 -190px;
   }
   #landing-page-div > h1 > span {
@@ -350,7 +369,7 @@ i.back-home {
     border-radius: 50px;
   }
   input {
-    font-size: 2.45em;
+    font-size: 2.3em;
   }
   form > button {
     margin-top: 2%;
@@ -384,56 +403,158 @@ i.back-home {
 }
 @media all and (min-width: 1024px) {
   #landing-page-div {
-    padding-top: 0;
+    padding-top: 0%;
   }
   #landing-page-div > h1 {
-    padding-top: 10%;
-    background-position: 0 -390px;
+    padding-top: 5%;
+    background-position: 0 -420px;
     font-size: 12.5em;
-    height: 25.5%;
+    height: 25%;
   }
+
   #landing-page-div > p {
     font-size: 40px;
-    margin: 2% auto;
+    margin: 0 auto;
   }
   .button-html {
     margin: 8% auto 0 auto;
     font-size: 3em;
-    padding: 2.5% 6.5%;
+    padding: 2% 6%;
   }
   .button {
     font-size: 35px;
   }
   h3 {
     font-size: 1.2em;
+    text-align: center;
+    width: 50%;
+    margin: 1.5% auto;
   }
 
   h1 {
-    font-size: 7.3em;
-    padding-top: 2%;
-    box-shadow: 15px -20px 40px lightgray;
+    padding-top: 1.2%;
   }
+
   h1 > span {
-    font-size: 6rem;
-    display: inline-block;
     width: 14%;
   }
 
   .styled-select {
-    width: 35%;
-    height: 10%;
-    font-size: 1.5em;
+    width: 20%;
+    height: 25%;
+    font-size: 2em;
     padding: 1% 2%;
-    text-align: center;
+    margin: 0;
+    margin-top: 1%;
   }
+
   input {
-    font-size: 3em;
+    font-size: 2.5em;
+  }
+
+  form {
+    margin: 0;
+    width: 65%;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 6%;
+    padding: 0;
+  }
+
+  .top-track-details {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    margin: 0 5%;
+  }
+  .top-tracks > h2 {
+    font-size: 2em;
+    margin-top: -20px;
+  }
+  nav {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav > h1 {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  nav > ul > li {
+    margin: 0;
+    display: inline-block;
+  }
+
+  nav > ul {
+    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ul > li {
+    background-color: #a0e5c7;
+    width: 175px;
+    padding: 0.5%;
+    height: 30px;
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid black;
+  }
+
+  li > a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.75;
+  }
+
+  li > a:hover {
+    opacity: 1;
+  }
+
+  li {
+    text-align: center;
+    border: 1px solid #a9e5bb;
+    display: inline-block;
+    width: 20%;
+    height: 4.5%;
+    margin: 1% 2%;
+    vertical-align: center;
+    padding: 4% 0.85%;
+    font-size: 1.2em;
+  }
+
+  ol {
+    padding: 0;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  li > h5 {
+    text-align: left;
+    font-style: italic;
+    text-align: center;
   }
 
   form > button {
     font-size: 2em;
-    margin-top: 3%;
+    margin-top: 4%;
     padding: 10px 35px;
+  }
+
+  #song-results {
+    margin: 5% 12%;
+  }
+  .song-parts {
+    padding: 1% 0;
+    font-size: 1.3em;
   }
   footer {
     margin-top: 0;

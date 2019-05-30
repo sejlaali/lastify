@@ -48,11 +48,12 @@ class OneResult extends Component {
   }
 
   render() {
+    let info =this.state.info === "" ? <h5 className="artist-info-empty">No info available for this artist.</h5> : <h5 className="artist-info">{this.state.info}</h5>
     return (
       <div id="one-result-div">
         <h1>{this.state.name}</h1>
         <img src={this.state.img} alt="album"/>
-        <h5 className="artist-info">{this.state.info}</h5>
+      {info}
        <Link to="/homepage"><i className="material-icons back-home">keyboard_arrow_left</i></Link>
       </div>
     );
