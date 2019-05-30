@@ -61,7 +61,9 @@ https://res.cloudinary.com/dfzjh0dui/image/upload/v1558662919/IMG_3603.jpg
 | Rendering API on App | H | 3hrs | 3hrs |
 | Differentiating between song and artist search | H | 2hrs | 2.5hrs |
 | Click event that will preview song in media player | M | 3.5 hrs | 4hrs | 
-| Total | H | 15hrs| 15hrs | 
+| CSS Styling | M | 4hrs | 5hrs |
+| Total | H | 19hrs| 20hrs | 
 
 ## Additional Libraries
- 
+ Materialize.js for icons
+ iTunes API for player
