@@ -2,18 +2,17 @@ import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import "./Components.css";
 
-
 class ResultDetails extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       redirect: "",
-      img: "",
+      img: ""
     };
   }
 
-  setRedirect = evt => {
+  setRedirect = () => {
     this.setState({
       redirect: true
     });
@@ -49,26 +48,28 @@ class ResultDetails extends Component {
           </p>{" "}
         </div>
       ) : (
-       <div>
-        <h5 className="result-artist" onClick={this.setRedirect}>{this.props.result.artist}</h5>
-        <p>
-        Listeners: {" "}
-        {Number(this.props.result.listeners).toLocaleString("en")}
-      </p>
-      </div>
+        <div>
+          <h5 className="result-artist" onClick={this.setRedirect}>
+            {this.props.result.artist}
+          </h5>
+          <p>
+            Listeners:{" "}
+            {Number(this.props.result.listeners).toLocaleString("en")}
+          </p>
+        </div>
       );
 
     return (
       <div className="song-parts" key={this.props.index}>
         {this.renderRedirect()}
-        <i onClick={()=> [this.props.playNext(this.props.result)]} className="play-song material-icons">play_arrow</i>
-        <h4>
-          {this.props.result.name}
-        </h4>
+        <i
+          onClick={() => [this.props.playNext(this.props.result)]}
+          className="play-song material-icons"
+        >
+          play_arrow
+        </i>
+        <h4>{this.props.result.name}</h4>
         {artistOrSong}
-        {/* <a target="_blank" href={this.props.result.url}>
-          Click for more info
-        </a> */}
       </div>
     );
   }

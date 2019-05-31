@@ -115,7 +115,9 @@ class Input extends Component {
   render() {
     const header = this.state.preview ? (
       <h3>Currently Playing: {this.state.currentSong.name}</h3>
-    ) : <h3></h3>
+    ) : (
+      <h3 />
+    );
     const topTracks = this.state.topTracks.map((track, i) => (
       <li key={i}>
         {track.name}
@@ -126,17 +128,29 @@ class Input extends Component {
     return (
       <div className="input">
         <nav>
-        <Link className="title" to="/">
-          <h1>
-            LAST<span>ify</span>
-          </h1>
-        </Link>
+          <Link className="title" to="/">
+            <h1>
+              LAST<span>ify</span>
+            </h1>
+          </Link>
           <ul>
-          <li><a target="blank" href="https://www.last.fm/home">Last.fm</a></li>
-          <li><a target="blank" href="https://www.spotify.com/is/">Spotify</a></li>
-          <li><a target="blank" href="https://www.apple.com/itunes/">iTunes</a></li>
+            <li>
+              <a target="blank" href="https://www.last.fm/home">
+                Last.fm
+              </a>
+            </li>
+            <li>
+              <a target="blank" href="https://www.spotify.com/is/">
+                Spotify
+              </a>
+            </li>
+            <li>
+              <a target="blank" href="https://www.apple.com/itunes/">
+                iTunes
+              </a>
+            </li>
           </ul>
-          </nav>
+        </nav>
         <hr />
         {header}
         <div className="header">
@@ -155,7 +169,6 @@ class Input extends Component {
             />
             <button type="submit">ENTER</button>
           </form>
-
         </div>
         <div id="song-results">
           {this.state.allResults.map((result, i) => (
