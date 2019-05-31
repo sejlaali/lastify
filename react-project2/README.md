@@ -1,4 +1,4 @@
-# Project 2 Overview
+# LASTify
 
 ## Project Schedule
 
