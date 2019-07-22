@@ -1,0 +1,566 @@
+#landing-page-div {
+  width: 100%;
+  margin: 30% 0 0 0;
+  padding-top: 14.5%;
+}
+
+body {
+  background: #030408;
+}
+
+#landing-page-div > h1 {
+  box-shadow: none;
+  position: fixed;
+  top: 0px;
+  height: 9%;
+  padding: 12% 0;
+  font-size: 6em;
+  background-image: url(https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 -90px;
+}
+
+#landing-page-div > h1 > span {
+  font-size: 5.rem;
+}
+
+#landing-page-div > h4 {
+  color: white;
+}
+
+#landing-page-div > p {
+  color: white;
+  max-width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+  margin: 12px 0px;
+}
+
+.button,
+.button-html {
+  position: relative;
+  font-size: 30px;
+  text-decoration: none;
+  color: #0fff95;
+  background-color: transparent;
+  display: block;
+  margin: 0 auto;
+  transition: color 1s;
+}
+
+.button-html {
+  border: 1px solid #0fff95;
+  margin-top: 20%;
+  border-radius: 40px;
+  padding: 3% 10%;
+  transition: background-color 1s;
+}
+
+.button-html:hover {
+  background-color: #0fff95;
+}
+
+.button:hover {
+  color: black;
+}
+
+footer {
+  color: white;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+  padding: 5px 0;
+  bottom: 0px;
+}
+
+h1 {
+  width: 100%;
+  font-size: 4.8em;
+  text-align: center;
+  color: #0fff95;
+  padding-top: 3.5%;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  font-family: "Julius sans one", sans-serif;
+  letter-spacing: 6px;
+  font-weight: 600;
+}
+
+nav > ul {
+  display: none;
+}
+
+h1 > span {
+  font-size: 4rem;
+  font-weight: 600;
+  color: white;
+}
+
+i.music {
+  border: 0;
+  color: #0fff95;
+  font-size: 28px;
+}
+
+.title {
+  text-decoration: none;
+  color: white;
+}
+
+h3 {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+form,
+div > .button {
+  display: flex;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.styled-select {
+  border: 1px solid #ccc;
+  color: white;
+  font-size: 15px;
+  width: 50%;
+  height: 30px;
+  border-radius: 3px;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 97% 150%;
+}
+
+select {
+  padding: 4px 10px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+input {
+  width: 60%;
+  padding: 15px 5px;
+  background-color: transparent !important;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  border-bottom: 0.5px solid white;
+  opacity: 0.65;
+}
+
+input:focus {
+  outline: none;
+}
+
+form > button {
+  padding: 3px 25px;
+  height: 60px;
+  margin: auto 0px;
+  font-size: 1.3rem;
+  background-color: transparent;
+  color: white;
+  transition: all 1s;
+}
+
+form > button:hover {
+  background-color: #0fff95;
+  color: black;
+}
+
+#song-results {
+  margin-bottom: 10%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.top-tracks {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 100%;
+  margin: 20px auto 50px auto;
+  color: white;
+}
+
+.song-parts {
+  width: 85%;
+  margin: 5px auto;
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #bb342f;
+  font-family: "open sans", sans-serif;
+}
+
+.result-artist {
+  margin: 10px 0px;
+  font-size: 1em;
+  font-style: italic;
+  text-align: right;
+  transition: all 0.8s;
+}
+
+.result-artist:hover {
+  background-color: #0fff95;
+  color: black;
+  cursor: pointer;
+}
+
+p {
+  font-size: 14px;
+  text-align: right;
+}
+
+.top-track-details {
+  width: 100%;
+  margin: 1px;
+  text-align: left;
+  display: inline-block;
+}
+
+li {
+  width: 90%;
+  text-align: left;
+  border: 1px solid #a9e5bb;
+  padding: 3% 2%;
+  vertical-align: center;
+}
+
+li > h5 {
+  width: 100%;
+  padding: 5px 0px;
+  text-align: left;
+  margin: 0;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.media-player {
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  outline: none;
+}
+
+i.play-song {
+  display: block;
+  width: 8%;
+  text-align: center;
+  color: ivory;
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+}
+
+i.play-song:hover {
+  background-color: #bb342f;
+  border: none;
+  color: #a9e5bb;
+  transform: scale(1.3);
+  border-radius: 90px;
+}
+
+h5.artist-info,
+h5.artist-info-empty {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 0.8em;
+  line-height: 160%;
+  width: 30%;
+  height: 30vh;
+  overflow: auto;
+  margin: 0px auto;
+  padding: 10px 15px;
+  background-color: white;
+}
+
+.artist-info-empty {
+  width: 15%;
+  height: 8vh;
+}
+img {
+  display: block;
+  margin: 55px auto;
+}
+
+.input {
+  background-color: #03040877;
+}
+
+#one-result-div {
+  color: black;
+}
+
+#one-result-div > h1 {
+  font-size: 4em;
+  margin-top: 5%;
+  color: #bb342f;
+  box-shadow: none;
+}
+
+i.back-home {
+  border: none;
+  width: 100%;
+  margin: 70px auto 0 auto;
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  transition: all 1s;
+}
+
+i.back-home:hover {
+  background-color: #bb342f;
+  border: none;
+  color: #a9e5bb;
+  transform: scale(1.1);
+}
+
+@media all and (min-width: 768px) {
+  #landing-page-div {
+    padding-top: 5%;
+  }
+  #landing-page-div > h1 {
+    font-size: 8.7em;
+    padding: 15% 0 0 0;
+    height: 19%;
+    background-position: 0 -190px;
+  }
+  #landing-page-div > h1 > span {
+    font-size: 7rem;
+  }
+  #landing-page-div > p {
+    font-size: 40px;
+    margin: 3% auto;
+  }
+  h1 {
+    font-size: 5em;
+  }
+  .button-html {
+    margin: 12% auto 0 auto;
+    border-radius: 50px;
+  }
+  input {
+    font-size: 2.3em;
+  }
+  form > button {
+    margin-top: 2%;
+  }
+  li {
+    width: 75%;
+    margin: 0 auto;
+    padding: 1% 2%;
+    font-size: 1.2em;
+    font-family: "open sans", sans-serif;
+  }
+  li > h5 {
+    text-align: right;
+    font-size: 1em;
+  }
+  .styled-select {
+    height: 45px;
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 97% 60%;
+  }
+  i {
+    width: 6%;
+    padding: 0.8%;
+  }
+  .song-parts {
+    font-size: 1.2em;
+  }
+  .artist-info {
+    border: 2px solid #bb342f;
+    width: 60%;
+  }
+}
+@media all and (min-width: 1024px) {
+  #landing-page-div {
+    padding-top: 0%;
+    margin: 20% 0;
+    margin-top: 29%;
+    height: 220px;
+  }
+  #landing-page-div > h1 {
+    padding-top: 8%;
+    background-position: 0 -450px;
+    font-size: 12.5em;
+    height: 22.5%;
+  }
+
+  #landing-page-div > p {
+    font-size: 40px;
+    margin: 1% auto;
+  }
+  .button-html {
+    margin: 8% auto 0 auto;
+    font-size: 3em;
+    padding: 2% 6%;
+  }
+  .button {
+    margin: 0;
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 1.2em;
+    text-align: center;
+    width: 50%;
+    margin: 1.5% auto;
+  }
+
+  h1 {
+    padding-top: 1.2%;
+  }
+
+  h1 > span {
+    width: 14%;
+  }
+
+  .styled-select {
+    width: 20%;
+    height: 25%;
+    font-size: 2em;
+    padding: 1% 2%;
+    margin: 0;
+    margin-top: 1%;
+  }
+
+  input {
+    font-size: 2.5em;
+  }
+
+  form {
+    margin: 0;
+    width: 65%;
+  }
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-top: 6%;
+    padding: 0;
+  }
+
+  .top-track-details {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    margin: 0 5%;
+  }
+  .top-tracks > h2 {
+    font-size: 2em;
+    margin-top: -20px;
+  }
+  nav {
+    margin-top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav > h1 {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  nav > ul > li {
+    margin: 0;
+    display: inline-block;
+  }
+
+  nav > ul {
+    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  ul > li {
+    background-color: #a0e5c7;
+    width: 175px;
+    padding: 0.5%;
+    height: 30px;
+    font-size: 22px;
+    text-align: center;
+    border: 1px solid black;
+  }
+
+  li > a {
+    text-decoration: none;
+    color: black;
+    opacity: 0.6;
+  }
+
+  a:hover {
+    opacity: 1;
+    font-weight: 600;
+  }
+
+  li {
+    text-align: center;
+    border: 1px solid #a9e5bb;
+    display: inline-block;
+    width: 20%;
+    height: 4.5%;
+    margin: 1% 2%;
+    vertical-align: center;
+    padding: 4% 0.85%;
+    font-size: 1.2em;
+  }
+
+  ol {
+    padding: 0;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  li > h5 {
+    text-align: left;
+    font-style: italic;
+    text-align: center;
+  }
+
+  form > button {
+    font-size: 2em;
+    margin-top: 4%;
+    padding: 10px 35px;
+  }
+
+  #song-results {
+    margin: 5% 12%;
+  }
+  .song-parts {
+    padding: 1% 0;
+    font-size: 1.3em;
+  }
+  footer {
+    display: none;
+  }
+}
