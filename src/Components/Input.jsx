@@ -7,7 +7,7 @@ import Itunes from "./Itunes";
 import { Link } from "react-router-dom";
 
 dotenv.config();
-let key = process.env.REACT_APP_API_KEY;
+let key = "1deb80ec093a9391822d243aa558d18e"
 
 class Input extends Component {
   constructor(props) {
