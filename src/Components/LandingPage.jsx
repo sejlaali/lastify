@@ -19,7 +19,7 @@ class LandingPage extends Component {
             </Link>
           </button>
         </div>
-        <footer>Copyright &copy; General Assembly</footer>
+        <footer>Copyright &copy; Sejla Ali</footer>
       </div>
     );
   }
